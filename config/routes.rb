@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   namespace :tools do
-    resources :unfurls
+    resources :links
   end
 end
