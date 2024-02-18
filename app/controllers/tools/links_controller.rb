@@ -1,14 +1,18 @@
-class Tools::LinksController < ApplicationController
-  before_action :authenticate_user!
+# frozen_string_literal: true
 
-  def index
-  end
+module Tools
+  class LinksController < ApplicationController
+    before_action :authenticate_user!
 
-  def create
-    @link = Link.new(url: params[:url])
-    @link.unfurl!
-    respond_to do |format|
-      format.turbo_stream
+    def index
+    end
+
+    def create
+      @link = Link.new(url: params[:url])
+      @link.unfurl!
+      respond_to do |format|
+        format.turbo_stream
+      end
     end
   end
 end
