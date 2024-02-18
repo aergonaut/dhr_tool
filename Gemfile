@@ -77,3 +77,7 @@ end
 gem "dockerfile-rails", ">= 1.6", :group => :development
 
 gem "dotenv-rails"
+
+gem "sentry-ruby"
+
+gem "sentry-rails"
