@@ -88,5 +88,5 @@ Rails.application.configure do
     api_key: ENV['SENDGRID_API_KEY'],
     raise_delivery_errors: true
   }
-  config.acttion_mailer.default_url_options = { host: "https://dhr-tool.fly.dev" }
+  config.action_mailer.default_url_options = { host: "https://dhr-tool.fly.dev" }
 end
