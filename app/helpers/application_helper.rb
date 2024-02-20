@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def flash_key_to_color(key)
+  def flash_key_color(key)
     case key.to_sym
     when :notice
-      "blue"
+      "text-blue-800 bg-blue-50"
     when :alert
-      "red"
+      "text-red-800 bg-red-50"
     when :success
-      "green"
+      "text-green-800 bg-green-50"
     end
   end
 end

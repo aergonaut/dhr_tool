@@ -2,7 +2,7 @@
 
 module Users
   class RegistrationsController < Devise::RegistrationsController
-    prepend_before_action do
+    prepend_before_action(only: [:new, :create]) do
       unless Flipper.enabled?(:registrations)
         flash[:alert] = "Registrations are disabled"
         redirect_to new_user_session_path
