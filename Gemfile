@@ -74,6 +74,9 @@ group :development, :test do
 
   gem "webmock"
 
+  gem "cypress-on-rails", ">= 1.17.0", github: "shakacode/cypress-on-rails"
+  gem "database_cleaner"
+
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
