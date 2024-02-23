@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/shakacode/cypress-on-rails.git
+  revision: 15772043dd38266186a91d89dd62a81a63557fbd
+  specs:
+    cypress-on-rails (1.17.0)
+      rack
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -91,6 +98,12 @@ GEM
       bigdecimal
       rexml
     crass (1.0.6)
+    database_cleaner (2.0.2)
+      database_cleaner-active_record (>= 2, < 3)
+    database_cleaner-active_record (2.1.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     date (3.3.4)
     debug (1.9.1)
       irb (~> 1.10)
@@ -383,6 +396,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cypress-on-rails (>= 1.17.0)!
+  database_cleaner
   debug
   devise
   devise-passwordless
