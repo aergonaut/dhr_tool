@@ -51,6 +51,18 @@ jobs:
     needs: [ "lint", "test" ]
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11-alpine
+        ports:
+          - "5432:5432"
+        env:
+          POSTGRES_DB: dhr_tool_test
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: password
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: "postgres://rails:password@localhost:5432/dhr_tool_test"
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -64,6 +76,8 @@ jobs:
       run: yarn install --frozen-lockfile
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps
+    - name: Set up database schema
+      run: bin/rails db:schema:load
     - name: Run Playwright tests
       run: yarn playwright test
     - uses: actions/upload-artifact@v3
