@@ -56,6 +56,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 20
+    - name: Install Ruby and gems
+      uses: ruby/setup-ruby@v1.171.0
+      with:
+        bundler-cache: true
     - name: Install dependencies
       run: yarn install --frozen-lockfile
     - name: Install Playwright Browsers
