@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if defined?(CypressOnRails)
   CypressOnRails.configure do |c|
     c.api_prefix = ""
@@ -5,7 +7,7 @@ if defined?(CypressOnRails)
     # WARNING!! CypressOnRails can execute arbitrary ruby code
     # please use with extra caution if enabling on hosted servers or starting your local server on 0.0.0.0
     c.use_middleware = !Rails.env.production?
-    #  c.use_vcr_middleware = !Rails.env.production?
+    c.use_vcr_middleware = !Rails.env.production? && ENV["CYPRESS"]
     c.logger = Rails.logger
 
     # If you want to enable a before_request logic, such as authentication, logging, sending metrics, etc.

@@ -6,6 +6,7 @@ on:
     branches: [ "main" ]
 jobs:
   test:
+    needs: [ "lint" ]
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -45,3 +46,27 @@ jobs:
       # Add or replace any other lints here
       - name: Lint Ruby files
         run: bin/rubocop --parallel
+
+  playwright:
+    needs: [ "lint", "test" ]
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:1.41.2-jammy
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 20
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    # - name: Install Playwright Browsers
+    #   run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: yarn playwright test
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
