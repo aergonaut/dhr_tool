@@ -77,7 +77,7 @@ jobs:
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps
     - name: Set up database schema
-      run: bin/rails db:schema:load
+      run: bin/rails db:schema:load spec:preapre
     - name: Run Playwright tests
       run: yarn playwright test
     - uses: actions/upload-artifact@v3
