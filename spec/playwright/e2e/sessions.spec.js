@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { app, appFactories } from '../../support/on-rails';
+import { app, appFactories } from '../support/on-rails';
 
 test.describe("Sign in flow", () => {
   test.beforeEach(async ({ page }) => {
