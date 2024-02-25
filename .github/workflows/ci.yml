@@ -1,12 +1,12 @@
 name: "CI"
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 jobs:
   test:
-    needs: [ "lint" ]
+    needs: ["lint"]
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -48,7 +48,7 @@ jobs:
         run: bin/rubocop --parallel
 
   playwright:
-    needs: [ "lint", "test" ]
+    needs: ["lint", "test"]
     timeout-minutes: 60
     runs-on: ubuntu-latest
     services:
@@ -64,25 +64,25 @@ jobs:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/dhr_tool_test"
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 20
-    - name: Install Ruby and gems
-      uses: ruby/setup-ruby@v1.171.0
-      with:
-        bundler-cache: true
-    - name: Install dependencies
-      run: yarn install --frozen-lockfile
-    - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
-    - name: Set up database schema
-      run: bin/rails db:schema:load spec:prepare
-    - name: Run Playwright tests
-      run: yarn playwright test
-    - uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1.171.0
+        with:
+          bundler-cache: true
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
+      - name: Set up database schema
+        run: bin/rails db:schema:load spec:prepare
+      - name: Run Playwright tests
+        run: yarn playwright test
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

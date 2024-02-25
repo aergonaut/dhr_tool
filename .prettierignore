@@ -1,0 +1,2 @@
+# ignore VCR cassettes
+spec/vcr_cassettes

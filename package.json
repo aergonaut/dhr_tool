@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@playwright/test": "^1.41.2",
-    "playwright": "^1.41.2"
+    "playwright": "^1.41.2",
+    "prettier": "3.2.5"
   }
 }
