@@ -10,7 +10,7 @@ const { defineConfig, devices } = require("@playwright/test");
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-module.exports = defineConfig({
+export default defineConfig({
   testDir: "./spec/playwright/e2e",
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -71,7 +71,8 @@ module.exports = defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: "CYPRESS=1 bundle exec rails s -p 5017 -e test",
+    command:
+      "RAILS_MAX_THREADS=1 CYPRESS=1 bundle exec rails s -p 5017 -e test",
     url: "http://127.0.0.1:5017/up",
     reuseExistingServer: !process.env.CI,
   },

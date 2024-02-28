@@ -1,4 +1,5 @@
 import { test, expect } from "@playwright/test";
+import { faker } from "@faker-js/faker";
 import { app, appFactories } from "../support/on-rails";
 
 test.describe("Sign in flow", () => {
@@ -7,7 +8,7 @@ test.describe("Sign in flow", () => {
   });
 
   test("Logging in as a confirmed user", async ({ page }) => {
-    const email = "example@example.com";
+    const email = faker.internet.email();
     const password = "swordfish";
     await appFactories([["create", "user", "confirmed", { email, password }]]);
     await page.goto("/");
