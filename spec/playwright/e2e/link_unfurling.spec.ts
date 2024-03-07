@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { faker } from "@faker-js/faker";
-import { app, appFactories } from "../support/on-rails";
+import { app, appFactories, appVcrInsertCassette } from "../support/on-rails";
 
 test.describe("Link Tool", () => {
   test.beforeEach(async ({ page }) => {
@@ -11,6 +11,9 @@ test.describe("Link Tool", () => {
     const email = faker.internet.email();
     const password = "swordfish";
     await appFactories([["create", "user", "confirmed", { email, password }]]);
+
+    await appVcrInsertCassette("teen_rated_work", { record: "once" });
+
     await page.goto("/");
 
     await page.getByLabel("Email").fill(email);
@@ -27,8 +30,16 @@ test.describe("Link Tool", () => {
 
     await page.getByRole("button", { name: "Submit" }).click();
 
+    // find title link
     await expect(
-      page.getByRole("link", { name: "Draco Malfoy and the Timeline-Turner" }),
+      page
+        .getByTestId("results")
+        .getByRole("link", { name: "Draco Malfoy and the Timeline-Turner" }),
     ).toHaveAttribute("href", url);
+
+    // find rating
+    await expect(page.getByTestId("results")).toHaveText(
+      "Draco Malfoy and the Timeline-Turner by anxiousm3ss: Teen, 1,972 words, 1/1 Chapters",
+    );
   });
 });
