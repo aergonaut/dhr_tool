@@ -5,7 +5,7 @@ const contextPromise = request.newContext({
   baseURL: config.use ? config.use.baseURL : "http://localhost:5017",
 });
 
-const appCommands = async (data) => {
+const appCommands = async (data: { name: any; options: {} }) => {
   const context = await contextPromise;
   const response = await context.post("/__e2e__/command", { data });
 
@@ -13,13 +13,14 @@ const appCommands = async (data) => {
   return response.body;
 };
 
-const app = (name, options = {}) =>
+const app = (name: string, options = {}) =>
   appCommands({ name, options }).then((body) => body[0]);
-const appScenario = (name, options = {}) => app("scenarios/" + name, options);
-const appEval = (code) => app("eval", code);
-const appFactories = (options) => app("factory_bot", options);
+const appScenario = (name: string, options = {}) =>
+  app("scenarios/" + name, options);
+const appEval = (code: {} | undefined) => app("eval", code);
+const appFactories = (options: {} | undefined) => app("factory_bot", options);
 
-const appVcrInsertCassette = async (cassette_name, options) => {
+const appVcrInsertCassette = async (cassette_name: string, options = {}) => {
   const context = await contextPromise;
   if (!options) options = {};
 
