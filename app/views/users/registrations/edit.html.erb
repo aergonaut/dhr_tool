@@ -4,9 +4,9 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div>
-    <%= f.label :email, class: "block text-sm font-medium leading-6 text-gray-900" %>
+    <%= f.label(:email, class: "block text-sm font-medium leading-6 text-gray-900") %>
     <div class="mt-2">
-      <%= f.email_field :email, autocomplete: "email", required: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      <%= f.email_field(:email, autocomplete: "email", required: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6") %>
     </div>
   </div>
 
@@ -27,20 +27,20 @@
 
   <div>
     <div class="flex items-center justify-between">
-      <%= f.label :password, class: "block text-sm font-medium leading-6 text-gray-900" %>
+      <%= f.label(:password, class: "block text-sm font-medium leading-6 text-gray-900") %>
       <% if @minimum_password_length %>
         <div class="text-sm">(<%= @minimum_password_length %> characters minimum)</div>
       <% end %>
     </div>
     <div class="mt-2">
-      <%= f.password_field :password, autocomplete: "new-password", class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      <%= f.password_field(:password, autocomplete: "new-password", class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6") %>
     </div>
   </div>
 
   <div>
-    <%= f.label :password_confirmation, "Confirm new password", class: "block text-sm font-medium leading-6 text-gray-900" %>
+    <%= f.label(:password_confirmation, "Confirm new password", class: "block text-sm font-medium leading-6 text-gray-900") %>
     <div class="mt-2">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      <%= f.password_field(:password_confirmation, autocomplete: "new-password", class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6") %>
     </div>
   </div>
 
@@ -56,9 +56,9 @@
   <p class="mt-1 text-sm leading-6 text-gray-600">Your current password is required to confirm your changes.</p>
 
   <div>
-    <%= f.label :current_password, "Current password", class: "block text-sm font-medium leading-6 text-gray-900" %>
+    <%= f.label(:current_password, "Current password", class: "block text-sm font-medium leading-6 text-gray-900") %>
     <div class="mt-2">
-      <%= f.password_field :current_password, autocomplete: "current-password", required: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      <%= f.password_field(:current_password, autocomplete: "current-password", required: true, class: "block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6") %>
     </div>
   </div>
 
