@@ -49,5 +49,6 @@ class Link
     @chapters = page.search(CHAPTERS_SELECTOR).inner_text.strip
     @rating = page.search(RATING_SELECTOR).inner_text.strip
     @rating = "Teen" if @rating == "Teen And Up Audiences"
+    @rating = @rating[0]
   end
 end

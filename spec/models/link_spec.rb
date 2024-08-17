@@ -14,7 +14,7 @@ RSpec.describe(Link, type: :model) do
       expect(link.title).to(eq("Draco Malfoy and the Timeline-Turner by anxiousm3ss"))
       expect(link.words).to(eq("1,972"))
       expect(link.chapters).to(eq("1/1"))
-      expect(link.rating).to(eq("Teen"))
+      expect(link.rating).to(eq("T"))
     end
   end
 end

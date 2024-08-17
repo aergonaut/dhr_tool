@@ -39,7 +39,7 @@ test.describe("Link Tool", () => {
 
     // find rating
     await expect(page.getByTestId("results")).toHaveText(
-      "Draco Malfoy and the Timeline-Turner by anxiousm3ss: Teen, 1,972 words, 1/1 Chapters",
+      "Draco Malfoy and the Timeline-Turner by anxiousm3ss: T, 1,972 words, 1/1 Chapters",
     );
   });
 });
