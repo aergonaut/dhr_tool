@@ -24,7 +24,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install Ruby and gems
-        uses: ruby/setup-ruby@v1.171.0
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       # Add or replace database setup steps here
@@ -40,7 +40,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install Ruby and gems
-        uses: ruby/setup-ruby@v1.171.0
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       # Add or replace any other lints here
@@ -69,7 +69,7 @@ jobs:
         with:
           node-version: 20
       - name: Install Ruby and gems
-        uses: ruby/setup-ruby@v1.171.0
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - name: Install dependencies
