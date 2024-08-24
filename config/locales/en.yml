@@ -1,10 +1,5 @@
 en:
   devise:
-    sessions:
-      new:
-        forgot_your_password: Forgot your password?
-        sign_in: Sign in to your account
-        submit: Sign in
     shared:
       links:
         resend_confirmation_instructions: Resend confirmation instructions
@@ -57,6 +52,10 @@ en:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        forgot_your_password: Forgot your password?
+        sign_in: Sign in to your account
+        submit: Sign in
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
