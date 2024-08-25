@@ -36,7 +36,7 @@
       -->
       <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
         <button type="button" class="-m-2.5 p-2.5">
-          <span class="sr-only">Close sidebar</span>
+          <span class="sr-only"><%= t(".close") %></span>
           <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -152,14 +152,14 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
                 </svg>
-                Links
+                <%= t(".links") %>
               <% end %>
             </li>
           </ul>
         </li>
         <li class="-mx-6 mt-auto">
           <%- if user_signed_in? %>
-            <%= link_to "Your Profile", edit_user_registration_path, class: "flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800" %>
+            <%= link_to t(".profile"), edit_user_registration_path, class: "flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-gray-800" %>
           <% end %>
         </li>
       </ul>
