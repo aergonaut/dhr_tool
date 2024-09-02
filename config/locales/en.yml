@@ -84,6 +84,14 @@ en:
       close: Close sidebar
       links: Links
       profile: Your profile
+  tools:
+    links:
+      index:
+        clear: Clear
+        cta: Paste a URL to unfurl it into a text snippet describing the content at the link.
+        submit: Submit
+        title: Unfurl a link
+        url_label: URL
   users:
     registrations:
       edit:
