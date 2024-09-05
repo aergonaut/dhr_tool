@@ -1,3 +1,5 @@
 <p>
-  <%= link_to @twitter_link.kind, @twitter_link.url.to_s, class: "font-normal" %> by <%= @twitter_link.author %>
+  <%= link_to @twitter_link.url.to_s, class: "font-normal" do %>
+    <%= @twitter_link.kind %> by <%= @twitter_link.author %>
+  <% end %>
 </p>
