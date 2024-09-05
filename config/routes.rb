@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :tools do
     resources :links
+    resources :twitter_links
   end
 
   root to: redirect("/tools/links")

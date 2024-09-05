@@ -1,0 +1,22 @@
+<div class="prose mb-10">
+  <h1><%= t(".title") %></h1>
+  <p><%= t(".cta") %></p>
+</div>
+
+<%= form_with(model: @twitter_link, url: tools_twitter_links_path, class: "mx-auto mb-10", data: { controller: "link" }) do |f| %>
+  <div class="mb-5">
+    <%= f.label(:url, class: "block mb-2 text-sm font-medium text-gray-900") %>
+    <%= f.text_field(:url, class: "border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5", required: true, data: { link_target: "url" }) %>
+  </div>
+  <div class="mb-5">
+    <%= f.label(:kind, class: "block text-sm font-medium leading-6 text-gray-900") %>
+    <%= f.collection_select(:kind, TwitterLink::KINDS, :to_s, :to_s, { prompt: "Select a post kind" }, required: true, class: "mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6") %>
+  </div>
+  <div class="space-x-2">
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"><%= t(".submit") %></button>
+    <button type="button" data-action="link#clear" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200"><%= t(".clear") %></button>
+  </div>
+<% end %>
+
+<div id="results" class="prose max-w-prose" data-testid="results">
+</div>
