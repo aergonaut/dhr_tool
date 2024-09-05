@@ -16,7 +16,7 @@ class TwitterLink
     "SocMed",
     "Art and ficlet",
     "Drabble",
-    "Art and drabble"
+    "Art and drabble",
   ]
 
   validates :url, presence: true
