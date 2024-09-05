@@ -72,6 +72,9 @@ en:
         other: "%{count} errors prohibited this %{resource} from being saved:"
   helpers:
     label:
+      twitter_link:
+        kind: Kind of post
+        url: Tweet URL
       user:
         current_password: Current password
         email: Email address
@@ -92,6 +95,12 @@ en:
         submit: Submit
         title: Unfurl a link
         url_label: URL
+    twitter_links:
+      index:
+        clear: Clear
+        cta: Paste a link to a Twitter tweet and format it describing the content in the tweet.
+        submit: Submit
+        title: Format Twitter link
   users:
     registrations:
       edit:
