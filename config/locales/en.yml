@@ -85,15 +85,16 @@ en:
       info: Info
     sidebar:
       close: Close sidebar
-      links: Links
+      links: AO3 Links
       profile: Your profile
+      twitter_links: Twitter Links
   tools:
     links:
       index:
         clear: Clear
-        cta: Paste a URL to unfurl it into a text snippet describing the content at the link.
+        cta: Paste a URL to AO3 to extract information about its content.
         submit: Submit
-        title: Unfurl a link
+        title: Format AO3 link
         url_label: URL
     twitter_links:
       index:
