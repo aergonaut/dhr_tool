@@ -1,0 +1,149 @@
+---
+de:
+  welcome_header: Hallo Welt!
+  devise:
+    shared:
+      links:
+        resend_confirmation_instructions: Anweisungen zur Bestätigung erneut senden
+        sign_in: anmelden
+        sign_up: Melden Sie sich an
+    confirmations:
+      confirmed: Ihre E-Mail-Adresse wurde erfolgreich bestätigt.
+      send_instructions: Sie erhalten in wenigen Minuten eine E-Mail mit Anweisungen
+        zur Bestätigung Ihrer E-Mail-Adresse.
+      send_paranoid_instructions: Wenn Ihre E-Mail-Adresse in unserer Datenbank vorhanden
+        ist, erhalten Sie innerhalb weniger Minuten eine E-Mail mit Anweisungen zur
+        Bestätigung Ihrer E-Mail-Adresse.
+    failure:
+      already_authenticated: Sie sind bereits angemeldet.
+      inactive: Ihr Konto ist noch nicht aktiviert.
+      invalid: Ungültiger %{authentication_keys} oder ungültiges Passwort.
+      locked: Ihr Konto ist gesperrt.
+      last_attempt: Sie haben noch einen Versuch, bevor Ihr Konto gesperrt wird.
+      not_found_in_database: Ungültiger %{authentication_keys} oder ungültiges Passwort.
+      timeout: Ihre Sitzung ist abgelaufen. Melden Sie sich bitte erneut an, um fortzufahren.
+      unauthenticated: Sie müssen sich anmelden oder registrieren, bevor Sie fortfahren
+        können.
+      unconfirmed: Sie müssen Ihre E-Mail-Adresse bestätigen, bevor Sie fortfahren.
+    mailer:
+      confirmation_instructions:
+        subject: Anweisungen zur Bestätigung
+      reset_password_instructions:
+        subject: Anweisungen zum Zurücksetzen des Passworts
+      unlock_instructions:
+        subject: Anweisungen zum Entsperren
+      email_changed:
+        subject: E-Mail geändert
+      password_change:
+        subject: Passwort geändert
+    omniauth_callbacks:
+      failure: Sie konnten von %{kind} aus nicht authentifiziert werden, weil „ %{reason}
+        “.
+      success: Erfolgreiche Authentifizierung vom %{kind} -Konto.
+    passwords:
+      no_token: Sie können diese Seite nur aufrufen, wenn Sie eine E-Mail zur Kennwortzurücksetzung
+        erhalten haben. Wenn Sie eine E-Mail zur Kennwortzurücksetzung erhalten haben,
+        stellen Sie sicher, dass Sie die vollständige URL verwendet haben.
+      send_instructions: Sie erhalten in wenigen Minuten eine E-Mail mit Anweisungen
+        zum Zurücksetzen Ihres Passworts.
+      send_paranoid_instructions: Wenn Ihre E-Mail-Adresse in unserer Datenbank vorhanden
+        ist, erhalten Sie innerhalb weniger Minuten einen Link zur Passwortwiederherstellung
+        an Ihre E-Mail-Adresse.
+      updated: Ihr Passwort wurde erfolgreich geändert. Sie sind jetzt angemeldet.
+      updated_not_active: Ihr Passwort wurde erfolgreich geändert.
+    registrations:
+      destroyed: Tschüß! Ihr Konto wurde erfolgreich gekündigt. Wir hoffen, Sie bald
+        wiederzusehen.
+      signed_up: Willkommen! Sie haben sich erfolgreich angemeldet.
+      signed_up_but_inactive: Sie haben sich erfolgreich angemeldet. Wir konnten Sie
+        jedoch nicht anmelden, da Ihr Konto noch nicht aktiviert ist.
+      signed_up_but_locked: Sie haben sich erfolgreich angemeldet. Wir konnten Sie
+        jedoch nicht anmelden, da Ihr Konto gesperrt ist.
+      signed_up_but_unconfirmed: Eine Nachricht mit einem Bestätigungslink wurde an
+        Ihre E-Mail-Adresse gesendet. Bitte klicken Sie auf den Link, um Ihr Konto
+        zu aktivieren.
+      update_needs_confirmation: Sie haben Ihr Konto erfolgreich aktualisiert, aber
+        wir müssen Ihre neue E-Mail-Adresse bestätigen. Bitte überprüfen Sie Ihre
+        E-Mails und folgen Sie dem Bestätigungslink, um Ihre neue E-Mail-Adresse zu
+        bestätigen.
+      updated: Ihr Konto wurde erfolgreich aktualisiert.
+      updated_but_not_signed_in: Ihr Konto wurde erfolgreich aktualisiert, aber da
+        Ihr Passwort geändert wurde, müssen Sie sich erneut anmelden.
+    sessions:
+      signed_in: Erfolgreich angemeldet.
+      signed_out: Erfolgreich abgemeldet.
+      already_signed_out: Erfolgreich abgemeldet.
+      new:
+        forgot_your_password: Passwort vergessen?
+        sign_in: Melden Sie sich bei Ihrem Konto an
+        submit: anmelden
+    unlocks:
+      send_instructions: Sie erhalten in wenigen Minuten eine E-Mail mit Anweisungen
+        zum Entsperren Ihres Kontos.
+      send_paranoid_instructions: Wenn Ihr Konto besteht, erhalten Sie in wenigen
+        Minuten eine E-Mail mit Anweisungen zum Entsperren.
+      unlocked: Ihr Konto wurde erfolgreich entsperrt. Bitte melden Sie sich an, um
+        fortzufahren.
+  errors:
+    messages:
+      already_confirmed: wurde bereits bestätigt. Bitte versuchen Sie, sich anzumelden
+      confirmation_period_expired: muss innerhalb von %{period} bestätigt werden,
+        bitte fordern Sie ein Neues an
+      expired: ist abgelaufen, bitte fordern Sie ein Neues an
+      not_found: nicht gefunden
+      not_locked: war nicht gesperrt
+      not_saved:
+        one: '1 Fehler verhinderte das Speichern dieser %{resource} :'
+        other: 'Aufgrund %{count} Fehlern konnte diese %{resource} nicht gespeichert
+          werden:'
+  helpers:
+    label:
+      twitter_link:
+        kind: Art des Beitrags
+        url: Tweet-URL
+      user:
+        current_password: Aktuelles Passwort
+        email: E-Mail-Adresse
+        password: Passwort
+        password_confirmation: Passwort bestätigen
+  shared:
+    flash_container:
+      info: Info
+    sidebar:
+      close: Sidebar schließen
+      links: AO3 Links
+      profile: Ihr Profil
+      twitter_links: Twitter Links
+  tools:
+    links:
+      index:
+        clear: Klar
+        cta: Fügen Sie eine URL zu AO3 ein, um Informationen zu dessen Inhalt zu extrahieren.
+        submit: Einreichen
+        title: Format AO3-Link
+        url_label: URL
+    twitter_links:
+      index:
+        clear: Klar
+        cta: Fügen Sie einen Link zu einem Twitter-Tweet ein und formatieren Sie ihn,
+          indem Sie den Inhalt des Tweets beschreiben.
+        submit: Einreichen
+        title: Twitter-Link formatieren
+  users:
+    registrations:
+      edit:
+        change_password: Kennwort ändern
+        confirm_changes: Änderungen bestätigen
+        confirm_changes_message: Zur Bestätigung Ihrer Änderungen wird Ihr aktuelles
+          Passwort benötigt.
+        leave_blank: Lassen Sie dieses Feld leer, wenn Sie Ihr Passwort nicht ändern
+          möchten.
+        sign_out: Abmelden
+        submit: Aktualisieren
+        title: Bearbeiten Sie Ihr Profil
+        waiting_for_confirmation: 'Warte auf Bestätigung für: %{email}'
+      new:
+        closed: Anmeldungen sind geschlossen
+        sign_up: Ein Konto erstellen
+        submit: Melden Sie sich an
+...
