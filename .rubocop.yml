@@ -5,8 +5,16 @@ require:
 inherit_gem:
   rubocop-shopify: rubocop.yml
 
+inherit_mode:
+  merge:
+    - Exclude
+
 AllCops:
   SuggestExtensions: false
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - db/migrate/**/*.rb
 
 RSpec/MultipleExpectations:
   Enabled: false
