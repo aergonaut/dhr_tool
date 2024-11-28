@@ -1,0 +1,123 @@
+---
+ja:
+  welcome_header: こんにちは世界！
+  devise:
+    shared:
+      links:
+        resend_confirmation_instructions: 確認手順を再送信
+        sign_in: サインイン
+        sign_up: サインアップ
+    confirmations:
+      confirmed: メールアドレスの確認が完了しました。
+      send_instructions: 数分以内に、メールアドレスを確認する手順を記載したメールが届きます。
+      send_paranoid_instructions: あなたのメールアドレスが弊社のデータベースに存在する場合、数分以内にメールアドレスを確認する手順を記載したメールが届きます。
+    failure:
+      already_authenticated: すでにサインインしています。
+      inactive: あなたのアカウントはまだ有効化されていません。
+      invalid: '%{authentication_keys}またはパスワードが無効です。'
+      locked: アカウントがロックされています。
+      last_attempt: アカウントがロックされる前に、あと 1 回試すことができます。
+      not_found_in_database: '%{authentication_keys}またはパスワードが無効です。'
+      timeout: セッションの有効期限が切れました。続行するには再度サインインしてください。
+      unauthenticated: 続行する前にサインインまたはサインアップする必要があります。
+      unconfirmed: 続行する前にメールアドレスを確認する必要があります。
+    mailer:
+      confirmation_instructions:
+        subject: 確認手順
+      reset_password_instructions:
+        subject: パスワードリセット手順
+      unlock_instructions:
+        subject: ロック解除手順
+      email_changed:
+        subject: メールアドレスが変更されました
+      password_change:
+        subject: パスワードが変更されました
+    omniauth_callbacks:
+      failure: 「 %{reason} 」のため、 %{kind}から認証できませんでした。
+      success: '%{kind}アカウントからの認証に成功しました。'
+    passwords:
+      no_token: パスワード リセット メールからアクセスしないと、このページにアクセスできません。パスワード リセット メールからアクセスする場合は、提供された完全な
+        URL を使用していることを確認してください。
+      send_instructions: 数分以内に、パスワードをリセットする方法を説明したメールが届きます。
+      send_paranoid_instructions: あなたのメールアドレスが弊社のデータベースに存在する場合、数分以内にあなたのメールアドレスにパスワード回復リンクが送信されます。
+      updated: パスワードが正常に変更されました。これでサインインできました。
+      updated_not_active: パスワードが正常に変更されました。
+    registrations:
+      destroyed: さようなら！アカウントは正常にキャンセルされました。またのご利用をお待ちしております。
+      signed_up: ようこそ！登録が完了しました。
+      signed_up_but_inactive: 登録が完了しました。ただし、アカウントがまだ有効化されていないため、サインインできませんでした。
+      signed_up_but_locked: 登録は正常に完了しました。ただし、アカウントがロックされているため、サインインできませんでした。
+      signed_up_but_unconfirmed: 確認リンクを含むメッセージがあなたのメールアドレスに送信されました。リンクをクリックしてアカウントを有効にしてください。
+      update_needs_confirmation: アカウントは正常に更新されましたが、新しいメール アドレスを確認する必要があります。メールを確認し、確認リンクに従って新しいメール
+        アドレスを確認してください。
+      updated: アカウントが正常に更新されました。
+      updated_but_not_signed_in: アカウントは正常に更新されましたが、パスワードが変更されたため、再度サインインする必要があります。
+    sessions:
+      signed_in: 正常にサインインしました。
+      signed_out: 正常にサインアウトしました。
+      already_signed_out: 正常にサインアウトしました。
+      new:
+        forgot_your_password: パスワードをお忘れですか？
+        sign_in: アカウントにサインイン
+        submit: サインイン
+    unlocks:
+      send_instructions: 数分以内に、アカウントのロックを解除する方法を説明したメールが届きます。
+      send_paranoid_instructions: アカウントが存在する場合は、数分以内にロックを解除する方法を説明したメールが届きます。
+      unlocked: アカウントのロック解除に成功しました。続行するにはサインインしてください。
+  errors:
+    messages:
+      already_confirmed: すでに確認されています。サインインしてください
+      confirmation_period_expired: '%{period}以内に確認する必要があります。新しいものをリクエストしてください'
+      expired: 期限が切れています。新しいものをリクエストしてください
+      not_found: 見つかりません
+      not_locked: ロックされていませんでした
+      not_saved:
+        other: '%{count}エラーにより、この%{resource}保存できませんでした:'
+  helpers:
+    label:
+      twitter_link:
+        kind: 投稿の種類
+        url: ツイートURL
+      user:
+        current_password: 現在のパスワード
+        email: 電子メールアドレス
+        password: パスワード
+        password_confirmation: パスワードの確認
+  shared:
+    flash_container:
+      info: 情報
+    sidebar:
+      close: サイドバーを閉じる
+      links: AO3 リンク
+      profile: あなたのプロフィール
+      twitter_links: Twitterリンク
+  tools:
+    links:
+      index:
+        clear: クリア
+        cta: AO3 に URL を貼り付けて、そのコンテンツに関する情報を抽出します。
+        submit: 提出する
+        title: フォーマットAO3リンク
+        url_label: メールアドレス
+    twitter_links:
+      index:
+        clear: クリア
+        cta: Twitter ツイートへのリンクを貼り付け、ツイートの内容を説明する書式を設定します。
+        submit: 提出する
+        title: Twitterリンクのフォーマット
+  users:
+    registrations:
+      edit:
+        change_password: パスワードを変更する
+        confirm_changes: 変更を確認する
+        confirm_changes_message: 変更を確認するには現在のパスワードが必要です。
+        leave_blank: パスワードを変更しない場合は空白のままにしてください。
+        sign_out: サインアウト
+        submit: アップデート
+        title: プロフィールを編集する
+        waiting_for_confirmation: '確認待ち: %{email}'
+      new:
+        closed: 登録は終了しました
+        sign_up: アカウントを作成する
+        submit: サインアップ
+...
