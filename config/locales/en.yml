@@ -46,4 +46,8 @@ en:
         closed: Registrations are closed
         sign_up: Create an account
         submit: Sign up
-  hello_world: Hello fantastic world!
+  devise:
+    sessions:
+      new:
+        sign_in: Sign in
+        submit: Sign in
