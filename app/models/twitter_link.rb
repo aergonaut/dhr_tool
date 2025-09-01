@@ -27,6 +27,13 @@ class TwitterLink
   end
 
   def author
-    url&.path&.split("/")&.second
+    return nil unless url&.path
+
+    segments = url.path.split("/")
+    if url.host == "bsky.app"
+      segments[2]
+    else
+      segments[1]
+    end
   end
 end
