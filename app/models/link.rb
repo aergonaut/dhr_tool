@@ -20,6 +20,9 @@ class Link
 
   def unfurl!
     agent = Mechanize.new
+
+    agent.cookie_jar.add("accepted_tos", "20241119")
+
     page = agent.get(url)
 
     if adult_content_warning?(page)
