@@ -9,9 +9,24 @@ module Tools
 
     def create
       @link = Link.new(url: params[:url])
-      @link.unfurl!
-      respond_to do |format|
-        format.turbo_stream
+
+      begin
+        @link.unfurl!
+        respond_to do |format|
+          format.turbo_stream { render(:create) }
+        end
+      rescue LinkUnfurlError => e
+        Rails.logger.error("Failed to unfurl link #{params[:url]}: #{e.class} - #{e.message}")
+        flash.now[:alert] = "Unable to process link: #{e.message}"
+        respond_to do |format|
+          format.turbo_stream { render(:error) }
+        end
+      rescue StandardError => e
+        Rails.logger.error("Unexpected error unfurling link #{params[:url]}: #{e.class} - #{e.message}")
+        flash.now[:alert] = "An unexpected error occurred while processing the link"
+        respond_to do |format|
+          format.turbo_stream { render(:error) }
+        end
       end
     end
   end

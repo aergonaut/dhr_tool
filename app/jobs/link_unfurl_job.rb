@@ -9,19 +9,33 @@ class LinkUnfurlJob < ApplicationJob
   RATING_SELECTOR = "span.rating"
 
   def perform(url)
-    agent = Mechanize.new
-    page = agent.get(url)
+    link = Link.new(url: url)
 
-    title = page.search(WORK_TITLE_SELECTOR).inner_text.strip.tr("\n", " ").squish
-    words = page.search(WORDS_SELECTOR).inner_text.strip
-    chapters = page.search(CHAPTERS_SELECTOR).inner_text.strip
-    rating = page.search(RATING_SELECTOR).inner_text.strip
+    link.unfurl!
 
     {
-      title:,
-      words:,
-      chapters:,
-      rating:,
+      title: link.title,
+      words: link.words,
+      chapters: link.chapters,
+      rating: link.rating,
+    }
+  rescue LinkUnfurlError => e
+    Rails.logger.error("LinkUnfurlJob failed for URL: #{url} - #{e.class}: #{e.message}")
+
+    {
+      title: "Error: #{e.message}",
+      words: "",
+      chapters: "",
+      rating: "",
+    }
+  rescue StandardError => e
+    Rails.logger.error("LinkUnfurlJob failed for URL: #{url} - #{e.class}: #{e.message}")
+
+    {
+      title: "Error: An unexpected error occurred",
+      words: "",
+      chapters: "",
+      rating: "",
     }
   end
 end
