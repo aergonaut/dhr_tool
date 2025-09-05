@@ -40,7 +40,8 @@ class Link
     agent = Mechanize.new
 
     # Configure user agent to appear as a regular browser
-    agent.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    agent.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) " \
+      "Chrome/91.0.4472.124 Safari/537.36"
 
     # Set reasonable timeouts
     agent.open_timeout = 10
@@ -100,7 +101,9 @@ class Link
       if retries < max_retries
         retries += 1
         sleep_time = 2**retries
-        Rails.logger.info("Retrying URL #{url} in #{sleep_time} seconds due to timeout (attempt #{retries}/#{max_retries})")
+        Rails.logger.info(
+          "Retrying URL #{url} in #{sleep_time} seconds due to timeout (attempt #{retries}/#{max_retries})",
+        )
         sleep(sleep_time)
         retry
       else
