@@ -18,7 +18,9 @@
       <% end %>
       <main class="<%= class_names("py-10", "lg:pl-72": user_signed_in?) %>">
         <div class="px-4 sm:px-6 lg:px-8">
-          <%= render partial: "shared/flash_container" %>
+          <div id="flash-container">
+            <%= render partial: "shared/flash_container" %>
+          </div>
           <%= yield %>
         </div>
       </main>
